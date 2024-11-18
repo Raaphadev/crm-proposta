@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Nova cor primária - Azul Royal */
+    --primary: 222 84% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Nova cor secundária - Azul Suave */
+    --secondary: 222 84% 96%;
+    --secondary-foreground: 222 84% 40%;
+
+    /* Cores de estado atualizadas */
+    --success: 142 76% 36%;
+    --success-foreground: 144 70% 96%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Cores de interface refinadas */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    /* Cores de elementos */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 222 84% 55%;
+
+    /* Outros */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Cores primárias no tema escuro */
+    --primary: 222 84% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 84% 20%;
+    --secondary-foreground: 222 84% 90%;
+
+    /* Estados no tema escuro */
+    --success: 142 76% 45%;
+    --success-foreground: 144 70% 96%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 48 96% 98%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Interface no tema escuro */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Elementos no tema escuro */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 222 84% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Efeitos de vidro refinados */
+.glass-effect {
+  @apply bg-background/80 backdrop-blur-sm border border-border shadow-sm;
+}
+
+/* Gradientes modernos */
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary to-primary/80;
+}
+
+.gradient-success {
+  @apply bg-gradient-to-r from-success to-success/80;
+}
+
+.gradient-warning {
+  @apply bg-gradient-to-r from-warning to-warning/80;
+}
+
+.gradient-destructive {
+  @apply bg-gradient-to-r from-destructive to-destructive/80;
+}
+
+/* Classes de transição */
+.smooth-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Sombras refinadas */
+.shadow-card {
+  @apply shadow-lg shadow-primary/5;
+}
+
+.shadow-hover {
+  @apply hover:shadow-xl hover:shadow-primary/10 transition-shadow duration-200;
+}
+
+/* Animações */
+.animate-fade {
+  @apply transition-opacity duration-200;
+}
+
+.animate-scale {
+  @apply transition-transform duration-200;
+}
+
+.animate-slide {
+  @apply transition-all duration-200;
+}
+
+/* Interações */
+.interactive-hover {
+  @apply hover:scale-105 active:scale-95 transition-transform duration-200;
+}
+
+.interactive-dim {
+  @apply hover:opacity-80 active:opacity-70 transition-opacity duration-200;
+}
+
+/* Estados */
+.state-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.state-inactive {
+  @apply bg-muted text-muted-foreground;
+}
+
+/* Layouts */
+.layout-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-section {
+  @apply py-6 sm:py-8 lg:py-12;
+}
+
+/* Cards */
+.card-hover {
+  @apply hover:shadow-lg hover:border-primary/20 transition-all duration-200;
+}
+
+.card-active {
+  @apply shadow-lg border-primary/30 bg-primary/5;
+}
